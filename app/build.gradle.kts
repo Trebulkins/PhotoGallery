@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.photogallery2"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.photogallery2"
@@ -39,8 +39,7 @@ dependencies {
 
     implementation(libs.retrofit2.converter.gson)
     implementation(libs.retrofit)
-    implementation("com.squareup.retrofit2:retrofit:2.5.0")
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation(libs.converter.scalars)
 
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.core.ktx)
