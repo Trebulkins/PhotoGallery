@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">PhotoGallery2</string>
+    <string name="app_name">PhotoGallery</string>
+    <string name="search">Поиск</string>
+    <string name="clear_search">Очистить</string>
 </resources>
