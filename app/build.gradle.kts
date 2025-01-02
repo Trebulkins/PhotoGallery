@@ -37,9 +37,10 @@ android {
 
 dependencies {
 
-    implementation(libs.retrofit2.converter.gson)
     implementation(libs.retrofit)
     implementation(libs.converter.scalars)
+    implementation(libs.gson)
+    implementation(libs.retrofit2.converter.gson)
 
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.core.ktx)
