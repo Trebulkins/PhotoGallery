@@ -32,7 +32,7 @@ private const val TAG = "PhotoGalleryFragment"
 private const val POLL_WORK = "POLL_WORK"
 
 @Suppress("DEPRECATION")
-class PhotoGalleryFragment : Fragment() {
+class PhotoGalleryFragment : VisibleFragment()  {
     private lateinit var photoRecyclerView: RecyclerView
     private lateinit var photoGalleryViewModel: PhotoGalleryViewModel
     private lateinit var thumbnailDownloader: ThumbnailDownloader<PhotoHolder>
