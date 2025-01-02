@@ -5,5 +5,6 @@
     <string name="notification_channel_name">FlickrFetchr</string>
     <string name="new_pictures_title">Новые фотографии PhotoGallery</string>
     <string name="new_pictures_text">В PhotoGallery доступны новые изображения!</string>
-
+    <string name="start_polling">POLLING: OFF</string>
+    <string name="stop_polling">POLLING: ON</string>
 </resources>
