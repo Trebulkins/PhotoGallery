@@ -42,6 +42,8 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.retrofit2.converter.gson)
 
+    implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
+
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
