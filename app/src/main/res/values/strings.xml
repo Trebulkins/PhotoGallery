@@ -2,4 +2,8 @@
     <string name="app_name">PhotoGallery</string>
     <string name="search">Поиск</string>
     <string name="clear_search">Очистить</string>
+    <string name="notification_channel_name">FlickrFetchr</string>
+    <string name="new_pictures_title">Новые фотографии PhotoGallery</string>
+    <string name="new_pictures_text">В PhotoGallery доступны новые изображения!</string>
+
 </resources>

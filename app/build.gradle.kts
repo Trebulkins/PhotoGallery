@@ -42,10 +42,17 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.retrofit2.converter.gson)
 
-    implementation(libs.androidx.lifecycle.extensions)
+    implementation("androidx.work:work-runtime:2.10.0")
+    implementation("androidx.work:work-runtime-ktx:2.10.0")
+    implementation("androidx.work:work-rxjava2:2.10.0")
+    implementation("androidx.work:work-gcm:2.10.0")
+    androidTestImplementation("androidx.work:work-testing:2.10.0")
+    implementation("androidx.work:work-multiprocess:2.10.0")
 
+    implementation(libs.androidx.lifecycle.extensions)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.core.ktx)
+
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
