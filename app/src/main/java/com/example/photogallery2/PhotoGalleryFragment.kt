@@ -22,10 +22,15 @@ private const val TAG = "PhotoGalleryFragment"
 class PhotoGalleryFragment : Fragment() {
     private lateinit var photoRecyclerView: RecyclerView
     private lateinit var photoGalleryViewModel: PhotoGalleryViewModel
+    private lateinit var thumbnailDownloader: ThumbnailDownloader<PhotoHolder>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        retainInstance = true
         photoGalleryViewModel = ViewModelProviders.of(this)[PhotoGalleryViewModel::class.java]
+        thumbnailDownloader = ThumbnailDownloader()
+        lifecycle.addObserver(thumbnailDownloader)
 
         val flickrLiveData: LiveData<List<GalleryItem>> = FlickrFetchr().fetchPhotos()
         flickrLiveData.observe(this,
@@ -35,6 +40,7 @@ class PhotoGalleryFragment : Fragment() {
         )
 
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,6 +60,11 @@ class PhotoGalleryFragment : Fragment() {
                 photoRecyclerView.adapter = PhotoAdapter(galleryItems)
             }
         )
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        lifecycle.removeObserver(thumbnailDownloader)
     }
 
 
