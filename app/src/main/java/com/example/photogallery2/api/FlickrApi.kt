@@ -13,6 +13,7 @@ interface FlickrApi {
                 "&nojsoncallback=1" +
                 "&extras=url_s"
     )
-    fun fetchUrlBytes(@Url url: String): Call<ResponseBody>
     fun fetchPhotos(): Call<FlickrResponse>
+
+    @GET fun fetchUrlBytes(@Url url: String): Call<ResponseBody>
 }

@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -86,11 +85,12 @@ class PhotoGalleryFragment : Fragment() {
 
         override fun onBindViewHolder(holder: PhotoHolder, position: Int) {
             val galleryItem = galleryItems[position]
-            val placeholder: Drawable =
-                ContextCompat.getDrawable(
+            thumbnailDownloader.queueThumbnail(holder, galleryItem.url)
+
+            val placeholder: Drawable = ContextCompat.getDrawable(
                     requireContext(),
                     R.drawable.ic_launcher_foreground
-                )?: ColorDrawable()
+            )?: ColorDrawable()
             holder.bindDrawable(placeholder)
         }
     }

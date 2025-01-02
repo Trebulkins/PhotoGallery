@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 private const val TAG = "ThumbnailDownloader"
+private const val MESSAGE_DOWNLOAD = 0
 
 class ThumbnailDownloader<in T>: HandlerThread(TAG), LifecycleObserver {
     private var hasQuit = false
@@ -20,11 +21,14 @@ class ThumbnailDownloader<in T>: HandlerThread(TAG), LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun setup() {
         Log.i(TAG, "Starting background thread")
+        start()
+        looper
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun tearDown() {
         Log.i(TAG,"Destroying background thread")
+        quit()
     }
 
 
