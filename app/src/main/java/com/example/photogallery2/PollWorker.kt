@@ -43,7 +43,7 @@ class PollWorker(val context: Context, workerParams: WorkerParameters): Worker(c
             Log.i(TAG,"Got a new result: $resultId")
             QueryPreferences.setLastResultId(context, resultId)
             val intent = PhotoGalleryActivity.newIntent(context)
-            val pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+            val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
             val resources = context.resources
             val notification = NotificationCompat
                     .Builder(context, NOTIFICATION_CHANNEL_ID)
